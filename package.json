@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "mdi": "^2.2.43",
+    "vite-plugin-fonts": "^0.7.0",
     "vuetify": "^3.0.6"
   }
 }
