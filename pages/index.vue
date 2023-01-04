@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="pa-6 d-flex justify-center" style="width: 100%; margin-top: 64px;">
+    <div class="px-6 d-flex justify-center"
+      style="width: 100%; padding-top: 50px;"
+      :style="'background-image: url(images/header.png); background-size: cover; background-position: right;'"
+    >
       <div class="gtr-content" style="margin: 50px 0 100px 0">
         <h3 class="mb-2 text-light">みんなのこころをぐうたらさせるNFTコレクション</h3>
         <h1 class="mb-2">いっしょにぐうたらしませんか？</h1>
@@ -15,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="pa-6 d-flex justify-center" style="width: 100%">
+    <div class="pa-6 pb-0 d-flex justify-center" style="width: 100%">
       <div class="gtr-content text-center">
         <h3 class="mb-2 text-light">ぐうたらしてるいぬ…？</h3>
         <h1 class="mb-2">ぐうたらまにあってなあに？</h1>
@@ -30,11 +33,22 @@
         </div>
       </div>
     </div>
+    <v-row style="width: 100%" no-gutters class="px-1 pb-2">
+      <v-col :cols="mobile ? 3 : 2" v-for="(i, n) in (mobile ? 4 : 6)" :key="n" class="d-flex child-flex pa-1">
+        <v-img
+          :src="'images/gutara' + i + '.png'"
+          aspect-ratio="1"
+          cover
+          class="grey lighten-2 rounded-lg"
+        >
+        </v-img>
+      </v-col>
+    </v-row>
     <div class="pa-6 d-flex justify-center bg-gray" style="width: 100%">
       <div class="gtr-content-full text-center">
-        <h2 class="mb-4 text-strong">Release Info</h2>
+        <h2 class="mb-6 text-strong">Release Info</h2>
         <div class="text-left d-flex justify-center" style="width: 100%">
-          <v-card class="px-5 py-8 rounded-lg mx-4">
+          <v-card class="px-6 py-10 rounded-lg mx-4">
             <div class="text-strong">
               <div>Phase1</div>
               <div>
@@ -60,7 +74,7 @@
               <btn-mint></btn-mint>
             </div>
           </v-card>
-          <v-card class="px-5 py-8 rounded-lg mx-4">
+          <v-card class="px-6 py-10 rounded-lg mx-4">
             <div class="text-strong">
               <div>Phase2</div>
               <div>
@@ -103,14 +117,14 @@
           </div>
         </div>
         <div class="px-4" style="width: calc(100% - 250px)">
-          <v-row style="width: 100%">
-          <v-col cols="4" v-for="(item, n) in merchItems" :key="n" class="d-flex child-flex">
+          <v-row style="width: 100%" no-gutters>
+            <v-col cols="4" v-for="(item, n) in merchItems" :key="n" class="d-flex child-flex pa-2">
               <v-img
-                :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                :src="'images/' + item + '.png'"
                 aspect-ratio="1"
                 cover
-                class="grey lighten-2"
+                style="transform: scale(0.8);"
+                class="grey lighten-2 rounded-lg"
               >
               </v-img>
             </v-col>
@@ -122,7 +136,9 @@
 </template>
 
 <script setup lang="ts">
-const merchItems = ["","","","","","",];
+import { useDisplay } from 'vuetify'
+const { mobile } = useDisplay()
+const merchItems = ["item1","item2","item3","item4","item5","item6"];
 </script>
 
 <style lang="scss">
