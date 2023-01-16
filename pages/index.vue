@@ -1,21 +1,33 @@
 <template>
   <div>
-    <div class="px-6 d-flex justify-center"
-      style="width: 100%; padding-top: 50px;"
-      :style="'background-image: url(images/header.png); background-size: cover; background-position: right;'"
+    <div class="px-6 d-flex flex-column justify-center"
+      style="width: 100%; padding-top: 50px; background-color: white;"
     >
-      <div class="gtr-content" style="margin: 50px 0 100px 0">
-        <h3 class="mb-2 text-light">みんなのこころをぐうたらさせるNFTコレクション</h3>
-        <h1 class="mb-2">いっしょにぐうたらしませんか？</h1>
-        <div class="mb-4">
-          "ぐうたらまにあ"<br/>
-          それは忙しいみなさんの心をどうにか癒したい、いっしょにぐうたらしてほしい、そんなきもちから生まれたキャラクターです。<br/>
-          あなたといっしょにぐうたらしたり、あなたの代わりにぐうたらしたり……<br/>
-          1人1つは持ってほしい、そんなコレクションです。
-        </div>
-        <div>
-          <btn-mint></btn-mint>
-        </div>
+      <div>
+        <item-grid></item-grid>
+      </div>
+      <v-row class="align-end">
+        <v-col cols="7">
+          <div class="gtr-content px-12" style="margin: 50px 0 50px 0">
+            <h3 class="mb-2 text-light">みんなのこころをぐうたらさせるNFTコレクション</h3>
+            <h1 class="mb-2">いっしょにぐうたらしませんか？</h1>
+            <div class="mb-4">
+              "ぐうたらまにあ"<br/>
+              それは忙しいみなさんの心をどうにか癒したい、いっしょにぐうたらしてほしい、そんなきもちから生まれたキャラクターです。<br/>
+              あなたといっしょにぐうたらしたり、あなたの代わりにぐうたらしたり……<br/>
+              1人1つは持ってほしい、そんなコレクションです。
+            </div>
+            <div>
+              <btn-mint></btn-mint>
+            </div>
+          </div>
+        </v-col>
+        <v-col cols="5" class="pb-12">
+          <v-img src="/images/gutara.png" max-width="400px" max-height="200px"></v-img>
+        </v-col>
+      </v-row>
+      <div>
+        <item-grid reverse></item-grid>
       </div>
     </div>
     <div class="pa-6 pb-0 d-flex justify-center" style="width: 100%">
