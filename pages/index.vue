@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="px-6 d-flex flex-column justify-center"
-      style="width: 100%; padding-top: 50px; background-color: white;"
+    <div
+      ref="top"
+      class="px-6 d-flex flex-column justify-center"
+      style="width: 100%; padding-top: 50px; background-color: white"
     >
       <div>
         <item-grid></item-grid>
@@ -9,58 +11,97 @@
       <v-row class="align-end">
         <v-col cols="7">
           <div class="gtr-content px-12" style="margin: 50px 0 50px 0">
-            <h3 class="mb-2 text-light">みんなのこころをぐうたらさせるNFTコレクション</h3>
+            <h3 class="mb-2 text-light">
+              みんなのこころをぐうたらさせるNFTコレクション
+            </h3>
             <h1 class="mb-2">いっしょにぐうたらしませんか？</h1>
             <div class="mb-4">
-              "ぐうたらまにあ"<br/>
-              それは忙しいみなさんの心をどうにか癒したい、いっしょにぐうたらしてほしい、そんなきもちから生まれたキャラクターです。<br/>
-              あなたといっしょにぐうたらしたり、あなたの代わりにぐうたらしたり……<br/>
+              "ぐうたらまにあ"<br />
+              それは忙しいみなさんの心をどうにか癒したい、いっしょにぐうたらしてほしい、そんなきもちから生まれたキャラクターです。<br />
+              あなたといっしょにぐうたらしたり、あなたの代わりにぐうたらしたり……<br />
               1人1つは持ってほしい、そんなコレクションです。
             </div>
             <div>
-              <btn-mint></btn-mint>
+              <common-mint-btn></common-mint-btn>
             </div>
           </div>
         </v-col>
         <v-col cols="5" class="pb-12">
-          <v-img src="/images/gutara.png" max-width="400px" max-height="200px"></v-img>
+          <v-img
+            src="/images/gutara.png"
+            max-width="400px"
+            max-height="200px"
+          ></v-img>
         </v-col>
       </v-row>
       <div>
         <item-grid reverse></item-grid>
       </div>
     </div>
-    <div class="pa-6 pb-0 d-flex justify-center" style="width: 100%">
+    <div
+      ref="about"
+      class="pa-6 pb-0 d-flex flex-column align-center"
+      style="width: 100%"
+    >
       <div class="gtr-content text-center">
         <h3 class="mb-2 text-light">ぐうたらしてるいぬ…？</h3>
         <h1 class="mb-2">ぐうたらまにあってなあに？</h1>
         <div class="mb-4">
-          何かと忙しいみなさんを癒したい、たまにはぐうたらしてほしい、そう思った作者が作ったのがこの"ぐうたらまにあ"<br/>
-          ぐうたらするのが得意です。あなたといっしょにぐうたらしたり、忙しい時には代わりにぐうたらしたり…<br/>
-          NFTジェネラティブを少しずつ不定期で、フェーズを分けて販売します。<br/>
+          何かと忙しいみなさんを癒したい、たまにはぐうたらしてほしい、そう思った作者が作ったのがこの"ぐうたらまにあ"<br />
+          ぐうたらするのが得意です。あなたといっしょにぐうたらしたり、忙しい時には代わりにぐうたらしたり…<br />
+          NFTジェネラティブを少しずつ不定期で、フェーズを分けて販売します。<br />
           積極的にアパレル展開もしていき、生活にぐうたらを添えていきたいと思っています。
         </div>
         <div>
-          <btn-mint></btn-mint>
+          <common-mint-btn></common-mint-btn>
         </div>
       </div>
-    </div>
-    <v-row style="width: 100%" no-gutters class="px-1 pb-2">
-      <v-col :cols="mobile ? 3 : 2" v-for="(i, n) in (mobile ? 4 : 6)" :key="n" class="d-flex child-flex pa-1">
-        <v-img
-          :src="'images/gutara' + i + '.png'"
-          aspect-ratio="1"
-          cover
-          class="grey lighten-2 rounded-lg"
+      <v-row style="width: 100%" no-gutters class="px-1 pb-2">
+        <v-col
+          :cols="mobile ? 3 : 2"
+          v-for="(i, n) in mobile ? 4 : 6"
+          :key="n"
+          class="d-flex child-flex pa-1"
         >
-        </v-img>
-      </v-col>
-    </v-row>
-    <div class="pa-6 d-flex justify-center bg-gray" style="width: 100%">
+          <v-img
+            :src="'images/gutara' + i + '.png'"
+            aspect-ratio="1"
+            cover
+            class="grey lighten-2 rounded-lg"
+          >
+          </v-img>
+        </v-col>
+      </v-row>
+    </div>
+    <!-- <div class="pa-6 d-flex justify-center" style="width: 100%">
       <div class="gtr-content-full text-center">
-        <h2 class="mb-6 text-strong">Release Info</h2>
+        <h2 class="mb-6 text-strong">Roadmap</h2>
         <div class="text-left d-flex justify-center" style="width: 100%">
-          <v-card class="px-6 py-10 rounded-lg mx-4">
+          <HomeRoadmap></HomeRoadmap>
+        </div>
+      </div>
+    </div> -->
+    <div
+      ref="roadmap"
+      class="pa-6 d-flex justify-center bg-gray-2"
+      style="width: 100%"
+    >
+      <div class="gtr-content-full text-center">
+        <div class="d-flex justify-center align-center mb-6">
+          <v-img
+            src="images/candy.png"
+            max-width="80px"
+            max-height="80px"
+          ></v-img>
+          <h2 class="text-strong">ROADMAP</h2>
+          <v-img
+            src="images/candy.png"
+            max-width="80px"
+            max-height="80px"
+          ></v-img>
+        </div>
+        <div class="text-left d-flex justify-center" style="width: 100%">
+          <v-card class="pa-10 rounded-lg mx-4">
             <div class="text-strong">
               <div>Phase1</div>
               <div>
@@ -83,10 +124,10 @@
               </div>
             </div>
             <div class="mt-8 text-center">
-              <btn-mint></btn-mint>
+              <common-mint-btn></common-mint-btn>
             </div>
           </v-card>
-          <v-card class="px-6 py-10 rounded-lg mx-4">
+          <v-card class="pa-10 rounded-lg mx-4">
             <div class="text-strong">
               <div>Phase2</div>
               <div>
@@ -109,7 +150,7 @@
               </div>
             </div>
             <div class="mt-8 text-center">
-              <btn-mint></btn-mint>
+              <common-mint-btn></common-mint-btn>
             </div>
           </v-card>
         </div>
@@ -117,25 +158,30 @@
     </div>
     <div class="pa-6 d-flex justify-center" style="width: 100%">
       <div class="gtr-content text-center d-flex" style="width: 100%">
-        <div class="pa-4" style="width: 300px;">
+        <div class="pa-4" style="width: 300px">
           <h3 class="mb-2 text-light">ぐうたらしてるいぬ…？</h3>
           <h1 class="mb-2">ぐうたらぐっず</h1>
           <div class="mb-4">
-            何かと忙しいみなさんを癒したい、たまにはぐうたらしてほしい、そう思った作者が作ったのがこの"ぐうたらまにあ"<br/>
+            何かと忙しいみなさんを癒したい、たまにはぐうたらしてほしい、そう思った作者が作ったのがこの"ぐうたらまにあ"<br />
             ぐうたらするのが得意です。あなたといっしょにぐうたらしたり、忙しい時には代わりにぐうたらしたり…
           </div>
           <div>
-            <btn-mint></btn-mint>
+            <g-btn width="100px" @click="goToShop">SHOP</g-btn>
           </div>
         </div>
         <div class="px-4" style="width: calc(100% - 250px)">
           <v-row style="width: 100%" no-gutters>
-            <v-col cols="4" v-for="(item, n) in merchItems" :key="n" class="d-flex child-flex pa-2">
+            <v-col
+              cols="4"
+              v-for="(item, n) in merchItems"
+              :key="n"
+              class="d-flex child-flex pa-2"
+            >
               <v-img
                 :src="'images/' + item + '.png'"
                 aspect-ratio="1"
                 cover
-                style="transform: scale(0.8);"
+                style="transform: scale(0.8)"
                 class="grey lighten-2 rounded-lg"
               >
               </v-img>
@@ -148,48 +194,83 @@
 </template>
 
 <script setup lang="ts">
-import { useDisplay } from 'vuetify'
-const { mobile } = useDisplay()
-const merchItems = ["item1","item2","item3","item4","item5","item6"];
+  import { useDisplay } from 'vuetify'
+  const { mobile } = useDisplay()
+  const route = useRoute()
+  const merchItems = ref(['item1', 'item2', 'item3', 'item4', 'item5', 'item6'])
+  const goToShop = () => {
+    let url = 'https://gutaramania.thebase.in'
+    window.open(url, '_blank')
+  }
+
+  const top = ref()
+  const about = ref()
+  const roadmap = ref()
+
+  const scrollTo = (ref: string) => {
+    if (ref === 'top') {
+      top.value?.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (ref === 'about') {
+      about.value?.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (ref === 'roadmap') {
+      roadmap.value?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  watchEffect(() => {
+    const p = route.query.p
+    console.log(p)
+    if (p) {
+      scrollTo(p.toString())
+    } else {
+      scrollTo('top')
+    }
+  })
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-body {
-  font-family: "M PLUS Rounded 1c";
-  font-weight: 500;
-}
+  body {
+    font-family: 'M PLUS Rounded 1c';
+    font-weight: 500;
+  }
 
-.text-strong {
-  font-family: "Righteous" !important;
-  font-weight: bold !important;
-}
+  .text-strong {
+    font-family: 'Righteous' !important;
+    font-weight: bold !important;
+  }
 
-.text-lg {
-  font-family: "Righteous" !important;
-  font-weight: 700 !important;
-  font-size: 42px !important;
-}
+  .text-lg {
+    font-family: 'Righteous' !important;
+    font-weight: 700 !important;
+    font-size: 42px !important;
+  }
 
-.text-light {
-  color: #525252;
-}
+  .text-light {
+    color: #525252;
+  }
 
-.gtr-content {
-  margin-top: 40px;
-  margin-bottom: 60px;
-  max-width: 1024px;
-}
+  .gtr-content {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    max-width: 1024px;
+  }
 
-.gtr-content-full {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 1024px;
-}
+  .gtr-content-full {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 1024px;
+  }
 
-.bg-gray {
-  background-color: #e8e8e8;
-}
+  .bg-gray {
+    background-color: #e8e8e8;
+  }
+
+  .bg-gray-2 {
+    background-color: #f4f4f4;
+  }
 </style>
