@@ -1,9 +1,10 @@
 <template>
   <v-app>
     <loading-animation></loading-animation>
-    <div class="pa-6 bg-gray">
+    <div class="bg-gray" :class="mobile ? 'pa-2' : 'pa-6'">
       <v-card class="rounded-xl elevation-10">
-        <layout-header></layout-header>
+        <layout-mini-header v-if="mobile"></layout-mini-header>
+        <layout-header v-else></layout-header>
         <slot />
       </v-card>
       <div class="pa-12 d-flex justify-center">
@@ -20,3 +21,8 @@
     </div>
   </v-app>
 </template>
+
+<script setup lang="ts">
+  import { useDisplay } from 'vuetify'
+  const { mobile } = useDisplay()
+</script>

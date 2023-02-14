@@ -1,0 +1,42 @@
+  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+  body {
+    font-family: 'M PLUS Rounded 1c';
+    font-weight: 500;
+  }
+
+  .text-strong {
+    font-family: 'Righteous' !important;
+    font-weight: bold !important;
+  }
+
+  .text-lg {
+    font-family: 'Righteous' !important;
+    font-weight: 700 !important;
+    font-size: 42px !important;
+  }
+
+  .text-light {
+    color: #525252;
+  }
+
+  .gtr-content {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    max-width: 1024px;
+  }
+
+  .gtr-content-full {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 1024px;
+  }
+
+  .bg-gray {
+    background-color: #e8e8e8;
+  }
+
+  .bg-gray-2 {
+    background-color: #f4f4f4;
+  }

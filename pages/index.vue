@@ -6,14 +6,25 @@
       style="width: 100%; padding-top: 50px; background-color: white"
     >
       <div>
-        <item-grid></item-grid>
+        <item-grid :size="mobile ? 100 : 180"></item-grid>
       </div>
-      <v-row class="align-end">
-        <v-col cols="7">
-          <div class="gtr-content px-12" style="margin: 50px 0 50px 0">
-            <h3 class="mb-2 text-light">
-              みんなのこころをぐうたらさせるNFTコレクション
-            </h3>
+      <v-row :class="mobile ? 'align-center' : 'align-end'">
+        <v-col v-if="mobile" cols="12" class="pt-12 text-center">
+          <div class="d-flex justify-center">
+            <v-img
+              src="/images/gutara.png"
+              max-width="200px"
+              max-height="150px"
+            ></v-img>
+          </div>
+        </v-col>
+        <v-col :cols="mobile ? 12 : 7">
+          <div
+            class="gtr-content px-xs-2 px-md-12"
+            :class="mobile ? 'text-center' : 'text-light'"
+            style="margin: 50px 0 50px 0"
+          >
+            <h3 class="mb-2">みんなのこころをぐうたらさせるNFTコレクション</h3>
             <h1 class="mb-2">いっしょにぐうたらしませんか？</h1>
             <div class="mb-4">
               "ぐうたらまにあ"<br />
@@ -26,7 +37,7 @@
             </div>
           </div>
         </v-col>
-        <v-col cols="5" class="pb-12">
+        <v-col v-if="!mobile" cols="5" class="pb-12">
           <v-img
             src="/images/gutara.png"
             max-width="400px"
@@ -35,7 +46,7 @@
         </v-col>
       </v-row>
       <div>
-        <item-grid reverse></item-grid>
+        <item-grid reverse :size="mobile ? 100 : 180"></item-grid>
       </div>
     </div>
     <div
@@ -100,8 +111,12 @@
             max-height="80px"
           ></v-img>
         </div>
-        <div class="text-left d-flex justify-center" style="width: 100%">
-          <v-card class="pa-10 rounded-lg mx-4">
+        <div
+          class="text-left d-flex justify-center"
+          :class="mobile ? 'flex-column' : ''"
+          style="width: 100%"
+        >
+          <v-card class="pa-10 rounded-lg ma-4">
             <div class="text-strong">
               <div>Phase1</div>
               <div>
@@ -157,8 +172,8 @@
       </div>
     </div>
     <div class="pa-6 d-flex justify-center" style="width: 100%">
-      <div class="gtr-content text-center d-flex" style="width: 100%">
-        <div class="pa-4" style="width: 300px">
+      <v-row class="gtr-content text-center" style="width: 100%">
+        <div class="pa-4" :style="mobile ? 'width: 100%' : 'width: 300px'">
           <h3 class="mb-2 text-light">ぐうたらしてるいぬ…？</h3>
           <h1 class="mb-2">ぐうたらぐっず</h1>
           <div class="mb-4">
@@ -169,10 +184,10 @@
             <g-btn width="100px" @click="goToShop">SHOP</g-btn>
           </div>
         </div>
-        <div class="px-4" style="width: calc(100% - 250px)">
+        <v-col class="px-4">
           <v-row style="width: 100%" no-gutters>
             <v-col
-              cols="4"
+              :cols="mobile ? 6 : 4"
               v-for="(item, n) in merchItems"
               :key="n"
               class="d-flex child-flex pa-2"
@@ -187,8 +202,8 @@
               </v-img>
             </v-col>
           </v-row>
-        </div>
-      </div>
+        </v-col>
+      </v-row>
     </div>
   </div>
 </template>
@@ -229,48 +244,3 @@
     }
   })
 </script>
-
-<style lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
-  body {
-    font-family: 'M PLUS Rounded 1c';
-    font-weight: 500;
-  }
-
-  .text-strong {
-    font-family: 'Righteous' !important;
-    font-weight: bold !important;
-  }
-
-  .text-lg {
-    font-family: 'Righteous' !important;
-    font-weight: 700 !important;
-    font-size: 42px !important;
-  }
-
-  .text-light {
-    color: #525252;
-  }
-
-  .gtr-content {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    max-width: 1024px;
-  }
-
-  .gtr-content-full {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 1024px;
-  }
-
-  .bg-gray {
-    background-color: #e8e8e8;
-  }
-
-  .bg-gray-2 {
-    background-color: #f4f4f4;
-  }
-</style>

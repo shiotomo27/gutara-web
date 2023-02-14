@@ -1,6 +1,6 @@
 <template>
-  <div style="width: 100%; height: 150px;">
-    <div style="margin-top: -70px;">
+  <div :style="`width: 100%; height: ${size - 30}px`">
+    <div style="margin-top: -70px">
       <div :class="reverse ? 'loop_wrap_r' : 'loop_wrap'">
         <ul>
           <li>
@@ -13,16 +13,28 @@
             <v-img :width="size" :height="size" src="/images/candy.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_brown.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_brown.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/donut.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/kakigori_blue.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/kakigori_blue.png"
+            />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_pink.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_pink.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/onigiri.png" />
@@ -43,16 +55,28 @@
             <v-img :width="size" :height="size" src="/images/candy.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_brown.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_brown.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/donut.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/kakigori_blue.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/kakigori_blue.png"
+            />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_pink.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_pink.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/onigiri.png" />
@@ -75,16 +99,28 @@
             <v-img :width="size" :height="size" src="/images/candy.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_brown.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_brown.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/donut.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/kakigori_blue.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/kakigori_blue.png"
+            />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_pink.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_pink.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/onigiri.png" />
@@ -105,16 +141,28 @@
             <v-img :width="size" :height="size" src="/images/candy.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_brown.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_brown.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/donut.png" />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/kakigori_blue.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/kakigori_blue.png"
+            />
           </li>
           <li>
-            <v-img :width="size" :height="size" src="/images/cupcake_pink.png" />
+            <v-img
+              :width="size"
+              :height="size"
+              src="/images/cupcake_pink.png"
+            />
           </li>
           <li>
             <v-img :width="size" :height="size" src="/images/onigiri.png" />
@@ -132,119 +180,121 @@
 </template>
 
 <script>
-export default {
-  props: {
-    offset: {
-      default: 0,
+  export default {
+    props: {
+      offset: {
+        default: 0,
+      },
+      reverse: {
+        type: Boolean,
+        default: false,
+      },
+      size: {
+        type: Number,
+        default: 180,
+      },
     },
-    reverse: {
-      type: Boolean,
-      default: false
-    }
-  },
 
-  data() {
-    return {
-      size: 180,
-    };
-  },
-};
+    data() {
+      return {}
+    },
+  }
 </script>
 
 <style lang="scss">
-.loop_wrap {
-  display: flex;
-  width: 110vw;
-  height: 300px;
-  // overflow: visible;
-}
-
-.loop_wrap ul {
-  width: auto;
-  display: flex;
-  height: 100%;
-}
-
-.loop_wrap .v-image {
-  margin: 5px;
-  border-radius: 15px;
-  // overflow: visible;
-  border: 6px solid white;
-}
-
-@keyframes loop {
-  0% {
-    transform: translateX(100%);
+  .loop_wrap {
+    display: flex;
+    width: 110vw;
+    height: 300px;
+    // overflow: visible;
   }
-  to {
-    transform: translateX(-100%);
+
+  .loop_wrap ul {
+    width: auto;
+    display: flex;
+    height: 100%;
   }
-}
 
-@keyframes loop2 {
-  0% {
-    transform: translateX(0);
+  .loop_wrap .v-image {
+    margin: 5px;
+    border-radius: 15px;
+    // overflow: visible;
+    border: 6px solid white;
   }
-  to {
-    transform: translateX(-200%);
+
+  @keyframes loop {
+    0% {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
-}
 
-.loop_wrap ul:first-child {
-  animation: loop 250s -125s linear infinite;
-}
-
-.loop_wrap ul:last-child {
-  animation: loop2 250s linear infinite;
-}
-
-ul {
-  list-style: none;
-}
-
-.loop_wrap_r {
-  display: flex;
-  width: 110vw;
-  height: 300px;
-  // overflow: visible;
-}
-
-.loop_wrap_r ul {
-  width: auto;
-  display: flex;
-  height: 100%;
-}
-
-.loop_wrap_r .v-image {
-  margin: 5px;
-  border-radius: 15px;
-  // overflow: visible;
-  border: 6px solid white;
-}
-
-@keyframes loopr {
-  0% {
-    transform: translateX(100%);
+  @keyframes loop2 {
+    0% {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-200%);
+    }
   }
-  to {
-    transform: translateX(-100%);
-  }
-}
 
-@keyframes loop2r {
-  0% {
-    transform: translateX(0);
+  .loop_wrap ul:first-child {
+    animation: loop 250s -125s linear infinite;
   }
-  to {
-    transform: translateX(-200%);
+
+  .loop_wrap ul:last-child {
+    animation: loop2 250s linear infinite;
   }
-}
 
-.loop_wrap_r ul:first-child {
-  animation: loopr 220s -110s linear infinite reverse;
-}
+  ul {
+    list-style: none;
+  }
 
-.loop_wrap_r ul:last-child {
-  animation: loop2r 220s linear infinite reverse;
-}
+  .loop_wrap_r {
+    display: flex;
+    width: 110vw;
+    height: 300px;
+    // overflow: visible;
+  }
+
+  .loop_wrap_r ul {
+    width: auto;
+    display: flex;
+    height: 100%;
+  }
+
+  .loop_wrap_r .v-image {
+    margin: 5px;
+    border-radius: 15px;
+    // overflow: visible;
+    border: 6px solid white;
+  }
+
+  @keyframes loopr {
+    0% {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes loop2r {
+    0% {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }
+
+  .loop_wrap_r ul:first-child {
+    animation: loopr 220s -110s linear infinite reverse;
+  }
+
+  .loop_wrap_r ul:last-child {
+    animation: loop2r 220s linear infinite reverse;
+  }
 </style>

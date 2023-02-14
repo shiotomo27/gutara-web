@@ -4,56 +4,13 @@
       class="gtr-app-bar text-strong d-flex align-center px-8"
       :style="
         displayBox
-          ? 'position: fixed; top: 0; padding: 0 24px 0 24px; width: calc(100% - 48px); background-color: #e8e8e8; transition: background-color 1s;'
+          ? 'position: fixed; top: 0; padding: 0 8px 0 8px; width: calc(100% - 8px); background-color: #e8e8e8; transition: background-color 1s;'
           : ''
       "
     >
       <nuxt-link to="/">
         <div>GUTARA</div>
       </nuxt-link>
-      <v-spacer></v-spacer>
-      <v-btn
-        large
-        flat
-        color="transparent"
-        class="gtr-app-bar-item"
-        @click="goToHome(undefined)"
-        >TOP</v-btn
-      >
-      <v-btn
-        large
-        flat
-        color="transparent"
-        class="gtr-app-bar-item"
-        @click="goToHome('about')"
-        >ABOUT</v-btn
-      >
-      <v-btn
-        large
-        flat
-        color="transparent"
-        class="gtr-app-bar-item"
-        @click="goToHome('roadmap')"
-        >ROADMAP</v-btn
-      >
-      <nuxt-link to="/mint">
-        <v-btn
-          large
-          flat
-          class="gtr-app-bar-item"
-          :color="route.path === '/mint' ? 'secondary' : 'transparent'"
-        >
-          MINT
-        </v-btn>
-      </nuxt-link>
-      <v-btn
-        large
-        flat
-        color="transparent"
-        class="gtr-app-bar-item"
-        @click="goToShop"
-        >SHOP</v-btn
-      >
       <v-spacer></v-spacer>
       <common-mint-btn></common-mint-btn>
     </div>
