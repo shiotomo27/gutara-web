@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div
+    v-scroll.self="onScroll"
+    style="padding-bottom: 100px; max-height: 100vh; overflow: scroll"
+  >
     <div
       ref="top"
       class="px-6 d-flex flex-column justify-center"
@@ -55,9 +58,11 @@
       style="width: 100%"
     >
       <div class="gtr-content text-center">
-        <h3 class="mb-2 text-light">ぐうたらしてるいぬ…？</h3>
-        <h1 class="mb-2">ぐうたらまにあってなあに？</h1>
-        <div class="mb-4">
+        <h3 class="mb-2 text-light fade-in">ぐうたらしてるいぬ…？</h3>
+        <h1 class="mb-2 fade-in" style="transition-delay: 100ms">
+          ぐうたらまにあってなあに？
+        </h1>
+        <div class="mb-4 fade-in" style="transition-delay: 200ms">
           何かと忙しいみなさんを癒したい、たまにはぐうたらしてほしい、そう思った作者が作ったのがこの"ぐうたらまにあ"<br />
           ぐうたらするのが得意です。あなたといっしょにぐうたらしたり、忙しい時には代わりにぐうたらしたり…<br />
           NFTジェネラティブを少しずつ不定期で、フェーズを分けて販売します。<br />
@@ -72,10 +77,12 @@
           :cols="mobile ? 3 : 2"
           v-for="(i, n) in mobile ? 4 : 6"
           :key="n"
-          class="d-flex child-flex pa-1"
+          class="d-flex child-flex pa-1 fade-in"
+          :style="'transition-delay: ' + 50 * i + 'ms'"
         >
           <v-img
             :src="'images/gutara' + i + '.png'"
+            :lazy-src="'images/gutara' + i + 'lazy.png'"
             aspect-ratio="1"
             cover
             class="grey lighten-2 rounded-lg"
@@ -98,7 +105,7 @@
       style="width: 100%"
     >
       <div class="gtr-content-full text-center">
-        <div class="d-flex justify-center align-center mb-6">
+        <div class="d-flex justify-center align-center mb-6 fade-in">
           <v-img
             src="images/candy.png"
             max-width="80px"
@@ -116,7 +123,10 @@
           :class="mobile ? 'flex-column' : ''"
           style="width: 100%"
         >
-          <v-card class="pa-10 rounded-lg ma-4">
+          <v-card
+            class="pa-10 rounded-lg ma-4 fade-in"
+            style="transition-delay: 100ms"
+          >
             <div class="text-strong">
               <div>Phase1</div>
               <div>
@@ -142,7 +152,10 @@
               <common-mint-btn></common-mint-btn>
             </div>
           </v-card>
-          <v-card class="pa-10 rounded-lg mx-4">
+          <v-card
+            class="pa-10 rounded-lg ma-4 fade-in"
+            style="transition-delay: 200ms"
+          >
             <div class="text-strong">
               <div>Phase2</div>
               <div>
@@ -174,9 +187,11 @@
     <div class="pa-6 d-flex justify-center" style="width: 100%">
       <v-row class="gtr-content text-center" style="width: 100%">
         <div class="pa-4" :style="mobile ? 'width: 100%' : 'width: 300px'">
-          <h3 class="mb-2 text-light">ぐうたらしてるいぬ…？</h3>
-          <h1 class="mb-2">ぐうたらぐっず</h1>
-          <div class="mb-4">
+          <h3 class="mb-2 text-light fade-in">ぐうたらしてるいぬ…？</h3>
+          <h1 class="mb-2 fade-in" style="transition-delay: 100ms">
+            ぐうたらぐっず
+          </h1>
+          <div class="mb-4 fade-in" style="transition-delay: 200ms">
             何かと忙しいみなさんを癒したい、たまにはぐうたらしてほしい、そう思った作者が作ったのがこの"ぐうたらまにあ"<br />
             ぐうたらするのが得意です。あなたといっしょにぐうたらしたり、忙しい時には代わりにぐうたらしたり…
           </div>
@@ -190,7 +205,8 @@
               :cols="mobile ? 6 : 4"
               v-for="(item, n) in merchItems"
               :key="n"
-              class="d-flex child-flex pa-2"
+              class="d-flex child-flex pa-2 fade-in"
+              :style="'transition-delay: ' + n * 50 + 'ms'"
             >
               <v-img
                 :src="'images/' + item + '.png'"
@@ -234,6 +250,18 @@
     }
   }
 
+  const onScroll = () => {
+    console.log('onScroll')
+    const els = document.querySelectorAll('.fade-in')
+    for (let index = 0; index < els.length; index += 1) {
+      const el = els[index]
+      const rect = el.getBoundingClientRect()
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight + 100) {
+        els[index].classList.add('on')
+      }
+    }
+  }
+
   watchEffect(() => {
     const p = route.query.p
     console.log(p)
@@ -244,3 +272,19 @@
     }
   })
 </script>
+
+<style lang="scss">
+  .fade-in {
+    transition: opacity 0.5s ease-out, transform 0.3s ease-out;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .fade-in.on {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+</style>

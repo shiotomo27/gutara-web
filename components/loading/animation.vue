@@ -83,7 +83,7 @@
   }, 1300)
   setTimeout(() => {
     show.value = false
-  }, 3000)
+  }, 2500)
 </script>
 
 <style>
