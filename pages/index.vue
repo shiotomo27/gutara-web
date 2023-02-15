@@ -24,7 +24,7 @@
         <v-col :cols="mobile ? 12 : 7">
           <div
             class="gtr-content px-xs-2 px-md-12"
-            :class="mobile ? 'text-center' : 'text-light'"
+            :class="mobile ? 'text-center' : 'text-left'"
             style="margin: 50px 0 50px 0"
           >
             <h3 class="mb-2">みんなのこころをぐうたらさせるNFTコレクション</h3>
@@ -91,18 +91,10 @@
         </v-col>
       </v-row>
     </div>
-    <!-- <div class="pa-6 d-flex justify-center" style="width: 100%">
-      <div class="gtr-content-full text-center">
-        <h2 class="mb-6 text-strong">Roadmap</h2>
-        <div class="text-left d-flex justify-center" style="width: 100%">
-          <HomeRoadmap></HomeRoadmap>
-        </div>
-      </div>
-    </div> -->
     <div
       ref="roadmap"
       class="pa-6 d-flex justify-center bg-gray-2"
-      style="width: 100%"
+      style="width: 100%; min-height: 10px"
     >
       <div class="gtr-content-full text-center">
         <div class="d-flex justify-center align-center mb-6 fade-in">
