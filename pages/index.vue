@@ -115,63 +115,106 @@
           :class="mobile ? 'flex-column' : ''"
           style="width: 100%"
         >
-          <v-card
-            class="pa-10 rounded-lg ma-4 fade-in"
-            style="transition-delay: 100ms"
-          >
-            <div class="text-strong">
-              <div>Phase1</div>
-              <div>
-                <span class="mr-2 text-lg">0.01</span>
-                <span>eth</span>
+          <v-card class="ma-2 pa-4 rounded-xl fade-in">
+            <div class="d-flex px-4 py-2">
+              <div class="text-strong text-h6">Phase1</div>
+              <v-spacer></v-spacer>
+              <div class="text-strong">
+                <div>
+                  <span class="mr-2 text-lg">200</span>
+                  <span class="text-strong text-h6">items</span>
+                </div>
               </div>
             </div>
-            <div>
-              <div class="d-flex my-4">
-                <v-icon class="mr-1">mdi-check</v-icon>
-                1/x 販売開始
-              </div>
-              <div class="d-flex my-4">
-                <v-icon class="mr-1">mdi-check</v-icon>
-                全150アイテム販売
-              </div>
-              <div class="d-flex my-4">
-                <v-icon class="mr-1">mdi-check</v-icon>
-                AL所有者のみ
-              </div>
-            </div>
-            <div class="mt-8 text-center">
-              <common-mint-btn></common-mint-btn>
-            </div>
+            <v-row class="pa-2 justify-center">
+              <v-sheet
+                class="rounded-xl pa-6 rounded-lg ma-2"
+                style="transition-delay: 100ms; height: 350px"
+                color="grey-lighten-4"
+              >
+                <div class="text-strong">
+                  <div>Presale</div>
+                  <div>
+                    <span class="mr-2 text-lg">0.015</span>
+                    <span class="text-strong text-h6">eth</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex my-4">
+                    <v-icon class="mr-1">mdi-check</v-icon>
+                    AL保有者のみミント可能
+                  </div>
+                  <div class="d-flex my-4">
+                    <v-icon class="mr-1">mdi-check</v-icon>
+                    3/1(Wed)21:00 - 3/2(Thu)21:00
+                  </div>
+                  <div class="d-flex my-4">
+                    <v-icon class="mr-1">mdi-check</v-icon>
+                    MAX 2ミント/ウォレット
+                  </div>
+                </div>
+                <div class="mt-8 text-center">
+                  <common-mint-btn></common-mint-btn>
+                </div>
+              </v-sheet>
+              <v-sheet
+                class="rounded-xl pa-6 rounded-lg ma-2"
+                style="transition-delay: 200ms; height: 350px"
+                color="grey-lighten-4"
+              >
+                <div class="text-strong">
+                  <div>Public Sale</div>
+                  <div>
+                    <span class="mr-2 text-lg">0.01</span>
+                    <span class="text-strong text-h6">eth</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex my-4">
+                    <v-icon class="mr-1">mdi-check</v-icon>
+                    だれでもミント可能
+                  </div>
+                  <div class="d-flex my-4">
+                    <v-icon class="mr-1">mdi-check</v-icon>
+                    3/2(Thu)22:00 -
+                  </div>
+                  <div class="d-flex my-4">
+                    <v-icon class="mr-1">mdi-check</v-icon>
+                    MAX 2ミント/ウォレット
+                  </div>
+                </div>
+                <div class="mt-8 text-center">
+                  <common-mint-btn></common-mint-btn>
+                </div>
+              </v-sheet>
+            </v-row>
           </v-card>
-          <v-card
-            class="pa-10 rounded-lg ma-4 fade-in"
-            style="transition-delay: 200ms"
-          >
-            <div class="text-strong">
-              <div>Phase2</div>
-              <div>
-                <span class="mr-2 text-lg">0.01</span>
-                <span>eth</span>
+          <v-card class="ma-2 pa-4 rounded-xl fade-in">
+            <div class="d-flex px-4 py-2">
+              <div class="text-strong text-h6">Phase2</div>
+              <v-spacer></v-spacer>
+              <div class="text-strong" style="opacity: 0">
+                <div>
+                  <span class="mr-2 text-lg">???</span>
+                  <span class="text-strong text-h6">items</span>
+                </div>
               </div>
             </div>
-            <div>
-              <div class="d-flex my-4">
-                <v-icon class="mr-1">mdi-check</v-icon>
-                1/x 販売開始
-              </div>
-              <div class="d-flex my-4">
-                <v-icon class="mr-1">mdi-check</v-icon>
-                全150アイテム販売
-              </div>
-              <div class="d-flex my-4">
-                <v-icon class="mr-1">mdi-check</v-icon>
-                だれでもミント可能
-              </div>
-            </div>
-            <div class="mt-8 text-center">
-              <common-mint-btn></common-mint-btn>
-            </div>
+            <v-row class="pa-2 justify-center">
+              <v-sheet
+                class="rounded-xl pa-6 rounded-lg ma-2 d-flex align-center justify-center font-weight-bold"
+                style="
+                  transition-delay: 200ms;
+                  height: 350px;
+                  min-width: 250px;
+                  width: 100%;
+                "
+                color="grey-lighten-4"
+              >
+                <v-icon class="mr-1">mdi-calendar</v-icon>
+                4月中旬予定
+              </v-sheet>
+            </v-row>
           </v-card>
         </div>
       </div>
