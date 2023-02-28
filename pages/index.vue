@@ -1,7 +1,12 @@
 <template>
   <div
     v-scroll.self="onScroll"
-    style="padding-bottom: 100px; max-height: 100vh; overflow: scroll-y"
+    style="
+      padding-bottom: 100px;
+      max-height: 100vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    "
   >
     <div
       ref="top"
