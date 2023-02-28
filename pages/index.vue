@@ -120,7 +120,7 @@
           :class="mobile ? 'flex-column' : ''"
           style="width: 100%"
         >
-          <v-card class="ma-2 pa-4 rounded-xl fade-in">
+          <v-card class="ma-2 pa-4 rounded-xl">
             <div class="d-flex px-4 py-2">
               <div class="text-strong text-h6">Phase1</div>
               <v-spacer></v-spacer>
@@ -194,7 +194,7 @@
               </v-sheet>
             </v-row>
           </v-card>
-          <v-card class="ma-2 pa-4 rounded-xl fade-in">
+          <v-card class="ma-2 pa-4 rounded-xl">
             <div class="d-flex px-4 py-2">
               <div class="text-strong text-h6">Phase2</div>
               <v-spacer></v-spacer>
