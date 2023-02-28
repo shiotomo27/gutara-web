@@ -165,7 +165,7 @@
                 <div class="text-strong">
                   <div>Public Sale</div>
                   <div>
-                    <span class="mr-2 text-lg">0.01</span>
+                    <span class="mr-2 text-lg">0.018</span>
                     <span class="text-strong text-h6">eth</span>
                   </div>
                 </div>
@@ -216,6 +216,9 @@
               </v-sheet>
             </v-row>
           </v-card>
+        </div>
+        <div class="text-center pa-2">
+          ミントには別途ガス代がかかります。ご了承ください。
         </div>
       </div>
     </div>
